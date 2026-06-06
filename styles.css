@@ -864,8 +864,19 @@ main section {
   line-height: 1.25;
 }
 
+.people-hint {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 750;
+}
+
 .people-section-title:first-child,
 .pub-group-title:first-child {
+  margin-top: 0;
+}
+
+.people-hint + .people-section-title {
   margin-top: 0;
 }
 
@@ -927,6 +938,10 @@ main section {
 .person-name-en,
 .person-name-ko {
   display: inline;
+}
+
+.person-name-ko {
+  margin-left: 0.25em;
 }
 
 .person-role {
@@ -1580,6 +1595,7 @@ main section {
   }
 
   .person-name-ko {
+    margin-left: 0;
     margin-top: 2px;
     color: var(--muted);
     font-size: 0.94em;
@@ -1612,20 +1628,87 @@ main section {
   }
 
   .media-modal {
-    padding: 16px;
+    padding: 10px;
+  }
+
+  .media-modal-card {
+    width: min(100%, 460px);
+    max-height: calc(100dvh - 20px);
+    overflow: hidden;
   }
 
   .media-modal-card img {
-    min-height: 260px;
+    min-height: 0;
+    height: min(42dvh, 260px);
+    max-height: min(42dvh, 260px);
   }
 
   .media-modal-copy {
-    padding: 22px;
+    min-height: 0;
+    overflow: auto;
+    gap: 8px;
+    padding: 18px;
+  }
+
+  .media-modal-copy h2 {
+    font-size: 21px;
+  }
+
+  .media-modal-description,
+  .media-modal-description p {
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  .media-modal.is-person-modal .media-modal-card {
+    grid-template-columns: 1fr;
+    width: min(100%, 380px);
+    max-height: calc(100dvh - 20px);
+  }
+
+  .media-modal.is-person-modal .media-modal-card img {
+    width: 100%;
+    height: min(26dvh, 190px);
+    max-height: min(26dvh, 190px);
+  }
+
+  .media-modal.is-person-modal .media-modal-copy h2 {
+    font-size: 19px;
+  }
+
+  .media-modal.is-person-modal .modal-role,
+  .media-modal.is-person-modal .modal-email {
+    font-size: 12px;
+  }
+
+  .media-modal.is-person-modal .modal-detail-list {
+    gap: 5px;
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  .media-modal.is-person-modal .modal-detail-list .career-entry {
+    grid-template-columns: 104px minmax(0, 1fr);
+    gap: 5px;
+  }
+
+  .media-modal.is-person-modal .modal-link-row {
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .media-modal.is-person-modal .link-pill {
+    min-height: 28px;
+    padding: 5px 8px;
+    font-size: 12px;
   }
 
   .media-modal-close {
-    top: 12px;
-    right: 12px;
+    top: 8px;
+    right: 8px;
+    min-height: 34px;
+    padding: 6px 10px;
+    font-size: 12px;
   }
 
   .alumni-list {
