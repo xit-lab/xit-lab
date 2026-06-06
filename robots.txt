@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xit-lab.github.io/xit-lab/sitemap.xml

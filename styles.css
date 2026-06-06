@@ -1668,8 +1668,11 @@ main section {
 
   .media-modal.is-person-modal .media-modal-card img {
     width: 100%;
-    height: min(26dvh, 190px);
-    max-height: min(26dvh, 190px);
+    height: min(32dvh, 250px);
+    max-height: min(32dvh, 250px);
+    object-fit: contain;
+    object-position: center center;
+    background: var(--soft);
   }
 
   .media-modal.is-person-modal .media-modal-copy h2 {
@@ -1688,8 +1691,8 @@ main section {
   }
 
   .media-modal.is-person-modal .modal-detail-list .career-entry {
-    grid-template-columns: 104px minmax(0, 1fr);
-    gap: 5px;
+    grid-template-columns: 108px minmax(0, 1fr);
+    gap: 12px;
   }
 
   .media-modal.is-person-modal .modal-link-row {

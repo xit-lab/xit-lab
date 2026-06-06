@@ -416,13 +416,17 @@ function openPersonPreview(card) {
   if (!mediaModal || !mediaModalImage || !mediaModalTitle || !mediaModalDescription) return;
 
   mediaModal.classList.add("is-person-modal");
+  const useMobileDetails = window.matchMedia("(max-width: 760px)").matches;
   const image = card.querySelector("img");
   const title = getPersonCardName(card) || image?.alt || "Member";
   const role = card.querySelector(".person-role")?.textContent.trim() || "";
   const metaItems = Array.from(card.querySelectorAll(".person-meta li")).map((item) => ({
     text: item.textContent.replace(/\s+/g, " ").trim(),
     period: item.querySelector(".career-period")?.textContent.replace(/\s+/g, " ").trim() || "",
-    detail: item.querySelector(".career-detail")?.textContent.replace(/\s+/g, " ").trim() || ""
+    detail: (useMobileDetails && item.dataset.mobileDetail
+      ? item.dataset.mobileDetail
+      : item.querySelector(".career-detail")?.textContent
+    )?.replace(/\s+/g, " ").trim() || ""
   }));
   const emailLink = card.querySelector(".person-email a[href^='mailto:']");
   const detailLinks = Array.from(card.querySelectorAll(".button-row a[href]"));
