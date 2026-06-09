@@ -148,6 +148,63 @@ function enhanceHomeAlbum() {
   startAlbumTimer();
 }
 
+function enhanceGalleryAlbums() {
+  document.querySelectorAll("[data-gallery-album]").forEach((album) => {
+    const card = album.closest(".gallery-card");
+    const slides = Array.from(album.querySelectorAll(".gallery-album-slide"));
+    const dots = card?.querySelector(".gallery-album-dots");
+    const prev = card?.querySelector("[data-gallery-prev]");
+    const next = card?.querySelector("[data-gallery-next]");
+    let activeIndex = Math.max(0, slides.findIndex((slide) => slide.classList.contains("is-active")));
+
+    if (slides.length <= 1) {
+      prev?.setAttribute("hidden", "");
+      next?.setAttribute("hidden", "");
+      dots?.setAttribute("hidden", "");
+      return;
+    }
+
+    const dotButtons = slides.map((_, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "gallery-album-dot";
+      button.setAttribute("aria-label", `Show gallery photo ${index + 1}`);
+      button.addEventListener("click", (event) => {
+        event.stopPropagation();
+        showSlide(index);
+      });
+      dots?.appendChild(button);
+      return button;
+    });
+
+    function showSlide(index) {
+      activeIndex = (index + slides.length) % slides.length;
+      slides.forEach((slide, slideIndex) => {
+        const isActive = slideIndex === activeIndex;
+        slide.classList.toggle("is-active", isActive);
+        slide.setAttribute("aria-hidden", String(!isActive));
+      });
+      dotButtons.forEach((button, buttonIndex) => {
+        const isActive = buttonIndex === activeIndex;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-current", isActive ? "true" : "false");
+      });
+    }
+
+    prev?.addEventListener("click", (event) => {
+      event.stopPropagation();
+      showSlide(activeIndex - 1);
+    });
+
+    next?.addEventListener("click", (event) => {
+      event.stopPropagation();
+      showSlide(activeIndex + 1);
+    });
+
+    showSlide(activeIndex);
+  });
+}
+
 function dateScore(item) {
   const time = item.querySelector("time")?.textContent || "";
   const match = time.match(/(\d{4})\D+(\d{1,2})/);
@@ -400,7 +457,7 @@ function openMediaPreview(card) {
   if (!mediaModal || !mediaModalImage || !mediaModalTitle || !mediaModalDescription) return;
 
   mediaModal.classList.remove("is-person-modal");
-  const image = card.querySelector("img");
+  const image = card.querySelector(".gallery-album-slide.is-active img") || card.querySelector("img");
   const title = card.querySelector("h3")?.textContent.trim() || image?.alt || "Image preview";
   const description = card.querySelector("p")?.textContent.trim() || image?.alt || "";
 
@@ -503,7 +560,10 @@ function enhanceImageCards() {
     card.setAttribute("role", "button");
     card.setAttribute("aria-label", `View ${card.querySelector("h3")?.textContent.trim() || "image"}`);
 
-    card.addEventListener("click", () => openMediaPreview(card));
+    card.addEventListener("click", (event) => {
+      if (event.target.closest(".gallery-album-button, .gallery-album-dot")) return;
+      openMediaPreview(card);
+    });
     card.addEventListener("keydown", (event) => {
       if (event.key !== "Enter" && event.key !== " ") return;
       event.preventDefault();
@@ -624,6 +684,7 @@ sortNews();
 renderNews();
 renderProjects();
 enhanceHomeAlbum();
+enhanceGalleryAlbums();
 enhanceNewsCards();
 enhancePublicationLinks();
 splitPersonNames();

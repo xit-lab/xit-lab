@@ -1052,6 +1052,11 @@ main section {
   font-size: 13px;
 }
 
+.publication .venue-highlight {
+  color: var(--teal-dark);
+  font-weight: 950;
+}
+
 .link-pill {
   display: inline-flex;
   min-height: 32px;
@@ -1115,6 +1120,111 @@ main section {
 
 .gallery-card figcaption {
   padding: 16px;
+}
+
+.gallery-album-card {
+  min-height: 0;
+}
+
+.gallery-album-track {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+  background: var(--soft);
+}
+
+.gallery-album-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(14px);
+  transition:
+    opacity 360ms ease,
+    transform 360ms ease,
+    visibility 360ms ease;
+}
+
+.gallery-album-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.gallery-album-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-album-button {
+  position: absolute;
+  top: 95px;
+  z-index: 3;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 999px;
+  background: rgba(7, 18, 37, 0.42);
+  color: #fff;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.gallery-album-button:hover,
+.gallery-album-button:focus-visible {
+  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(7, 18, 37, 0.68);
+  outline: none;
+}
+
+.gallery-album-button-prev {
+  left: 12px;
+}
+
+.gallery-album-button-next {
+  right: 12px;
+}
+
+.gallery-album-dots {
+  position: absolute;
+  right: 14px;
+  bottom: 84px;
+  z-index: 3;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding: 5px 6px;
+  border-radius: 999px;
+  background: rgba(7, 18, 37, 0.34);
+  backdrop-filter: blur(8px);
+}
+
+.gallery-album-dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.52);
+  cursor: pointer;
+  transition:
+    width 180ms ease,
+    background 180ms ease;
+}
+
+.gallery-album-dot.is-active {
+  width: 19px;
+  background: #fff;
 }
 
 .contact-grid {
