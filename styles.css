@@ -1132,7 +1132,7 @@ main section {
   font-weight: 800;
 }
 
-.gallery-card .memory-meta span:last-child {
+.gallery-card .memory-meta span + span {
   flex: 0 0 auto;
   color: var(--teal-dark);
   text-align: right;
