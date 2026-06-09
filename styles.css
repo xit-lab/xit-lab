@@ -731,6 +731,10 @@ main section {
   background: #fff;
 }
 
+.research-card img.thumbnail-align-left {
+  object-position: left center;
+}
+
 .research-card::after,
 .gallery-card::after {
   content: "View";
