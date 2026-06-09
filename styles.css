@@ -727,6 +727,10 @@ main section {
   transition: transform 220ms ease, filter 220ms ease;
 }
 
+.research-card img {
+  background: #fff;
+}
+
 .research-card::after,
 .gallery-card::after {
   content: "View";
@@ -1287,7 +1291,7 @@ main section {
   position: relative;
   min-height: 420px;
   overflow: hidden;
-  background: var(--soft);
+  background: #fff;
   touch-action: pan-y;
   user-select: none;
 }
@@ -1298,7 +1302,7 @@ main section {
   height: 100%;
   min-height: 420px;
   object-fit: cover;
-  background: var(--soft);
+  background: #fff;
 }
 
 .modal-album-button {
