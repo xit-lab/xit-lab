@@ -22,6 +22,7 @@ let newsExpanded = false;
 let projectsExpanded = false;
 let publicationsExpanded = false;
 const itemAnimationTimers = new WeakMap();
+let modalAlbumSwipeCleanup = null;
 
 function normalizePage(hash) {
   const page = String(hash || "").replace("#", "") || "home";
@@ -202,8 +203,74 @@ function enhanceGalleryAlbums() {
       showSlide(activeIndex + 1);
     });
 
+    bindSwipeNavigation(album, {
+      previous() {
+        showSlide(activeIndex - 1);
+      },
+      next() {
+        showSlide(activeIndex + 1);
+      },
+      onSwipe() {
+        if (!card) return;
+        card.dataset.albumSwiped = "true";
+        window.setTimeout(() => {
+          delete card.dataset.albumSwiped;
+        }, 350);
+      },
+    });
+
     showSlide(activeIndex);
   });
+}
+
+function bindSwipeNavigation(target, handlers) {
+  if (!target) return () => {};
+
+  let startX = 0;
+  let startY = 0;
+  let activePointerId = null;
+  const minDistance = 42;
+
+  function onPointerDown(event) {
+    if (event.button !== undefined && event.button !== 0) return;
+    activePointerId = event.pointerId;
+    startX = event.clientX;
+    startY = event.clientY;
+    target.setPointerCapture?.(event.pointerId);
+  }
+
+  function onPointerUp(event) {
+    if (activePointerId !== event.pointerId) return;
+
+    const deltaX = event.clientX - startX;
+    const deltaY = event.clientY - startY;
+    const isHorizontalSwipe = Math.abs(deltaX) >= minDistance && Math.abs(deltaX) > Math.abs(deltaY) * 1.2;
+    activePointerId = null;
+
+    if (!isHorizontalSwipe) return;
+    event.preventDefault();
+    event.stopPropagation();
+    if (deltaX < 0) {
+      handlers.next?.();
+    } else {
+      handlers.previous?.();
+    }
+    handlers.onSwipe?.();
+  }
+
+  function onPointerCancel() {
+    activePointerId = null;
+  }
+
+  target.addEventListener("pointerdown", onPointerDown);
+  target.addEventListener("pointerup", onPointerUp);
+  target.addEventListener("pointercancel", onPointerCancel);
+
+  return () => {
+    target.removeEventListener("pointerdown", onPointerDown);
+    target.removeEventListener("pointerup", onPointerUp);
+    target.removeEventListener("pointercancel", onPointerCancel);
+  };
 }
 
 function dateScore(item) {
@@ -459,6 +526,8 @@ function imageSource(image) {
 }
 
 function clearModalAlbumControls() {
+  modalAlbumSwipeCleanup?.();
+  modalAlbumSwipeCleanup = null;
   mediaModal?.classList.remove("is-gallery-album-modal");
   mediaModal?.querySelectorAll(".modal-album-button, .modal-album-dots").forEach((item) => item.remove());
 }
@@ -520,6 +589,14 @@ function enableModalAlbum(images, initialIndex, fallbackTitle) {
 
   prev.addEventListener("click", () => showImage(activeIndex - 1));
   next.addEventListener("click", () => showImage(activeIndex + 1));
+  modalAlbumSwipeCleanup = bindSwipeNavigation(mediaModalVisual, {
+    previous() {
+      showImage(activeIndex - 1);
+    },
+    next() {
+      showImage(activeIndex + 1);
+    },
+  });
 
   mediaModalVisual.append(prev, next, dots);
   showImage(activeIndex);
@@ -639,6 +716,10 @@ function enhanceImageCards() {
 
     card.addEventListener("click", (event) => {
       if (event.target.closest(".gallery-album-button, .gallery-album-dot")) return;
+      if (card.dataset.albumSwiped === "true") {
+        delete card.dataset.albumSwiped;
+        return;
+      }
       openMediaPreview(card);
     });
     card.addEventListener("keydown", (event) => {
