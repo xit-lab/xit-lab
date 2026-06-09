@@ -1122,6 +1122,22 @@ main section {
   padding: 16px;
 }
 
+.gallery-card .memory-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.gallery-card .memory-meta span:last-child {
+  flex: 0 0 auto;
+  color: var(--teal-dark);
+  text-align: right;
+}
+
 .gallery-album-card {
   min-height: 0;
 }
@@ -1265,12 +1281,89 @@ main section {
   box-shadow: 0 34px 80px rgba(0, 0, 0, 0.34);
 }
 
+.media-modal-visual {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  background: var(--soft);
+}
+
 .media-modal-card img {
+  display: block;
   width: 100%;
   height: 100%;
   min-height: 420px;
   object-fit: cover;
   background: var(--soft);
+}
+
+.modal-album-button {
+  position: absolute;
+  top: 50%;
+  z-index: 4;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.44);
+  border-radius: 999px;
+  background: rgba(7, 18, 37, 0.46);
+  color: #fff;
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.modal-album-button:hover,
+.modal-album-button:focus-visible {
+  border-color: rgba(255, 255, 255, 0.78);
+  background: rgba(7, 18, 37, 0.72);
+  outline: none;
+}
+
+.modal-album-button-prev {
+  left: 18px;
+}
+
+.modal-album-button-next {
+  right: 18px;
+}
+
+.modal-album-dots {
+  position: absolute;
+  right: 20px;
+  bottom: 18px;
+  z-index: 4;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  padding: 7px 8px;
+  border-radius: 999px;
+  background: rgba(7, 18, 37, 0.38);
+  backdrop-filter: blur(8px);
+}
+
+.modal-album-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.52);
+  cursor: pointer;
+  transition:
+    width 180ms ease,
+    background 180ms ease;
+}
+
+.modal-album-dot.is-active {
+  width: 22px;
+  background: #fff;
 }
 
 .media-modal-copy {
@@ -1521,6 +1614,11 @@ main section {
     max-height: 86vh;
   }
 
+  .media-modal-visual {
+    min-height: 340px;
+    max-height: 52vh;
+  }
+
   .media-modal-card img {
     min-height: 340px;
     max-height: 52vh;
@@ -1747,10 +1845,35 @@ main section {
     overflow: hidden;
   }
 
+  .media-modal-visual {
+    min-height: 0;
+    height: min(42dvh, 260px);
+    max-height: min(42dvh, 260px);
+  }
+
   .media-modal-card img {
     min-height: 0;
     height: min(42dvh, 260px);
     max-height: min(42dvh, 260px);
+  }
+
+  .modal-album-button {
+    width: 34px;
+    height: 34px;
+    font-size: 26px;
+  }
+
+  .modal-album-button-prev {
+    left: 12px;
+  }
+
+  .modal-album-button-next {
+    right: 12px;
+  }
+
+  .modal-album-dots {
+    right: 12px;
+    bottom: 12px;
   }
 
   .media-modal-copy {

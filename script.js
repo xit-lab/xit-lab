@@ -10,6 +10,7 @@ const projectToggle = document.querySelector(".project-toggle");
 const pubPanels = Array.from(document.querySelectorAll(".pub-panel"));
 const pubToggle = document.querySelector(".pub-toggle");
 const mediaModal = document.querySelector("#media-modal");
+const mediaModalVisual = document.querySelector(".media-modal-visual");
 const mediaModalImage = document.querySelector("#media-modal-image");
 const mediaModalTitle = document.querySelector("#media-modal-title");
 const mediaModalDescription = document.querySelector("#media-modal-description");
@@ -453,18 +454,93 @@ function renderPersonEmails() {
   });
 }
 
+function imageSource(image) {
+  return image?.currentSrc || image?.src || "";
+}
+
+function clearModalAlbumControls() {
+  mediaModal?.classList.remove("is-gallery-album-modal");
+  mediaModal?.querySelectorAll(".modal-album-button, .modal-album-dots").forEach((item) => item.remove());
+}
+
+function setModalImage(image, fallbackTitle) {
+  mediaModalImage.src = imageSource(image);
+  mediaModalImage.alt = image?.alt || fallbackTitle || "Image preview";
+}
+
+function cardDescription(card) {
+  const metaParts = Array.from(card.querySelectorAll(".memory-meta span"))
+    .map((span) => span.textContent.replace(/\s+/g, " ").trim())
+    .filter(Boolean);
+  if (metaParts.length) return metaParts.join(" · ");
+  return card.querySelector("p")?.textContent.replace(/\s+/g, " ").trim() || "";
+}
+
+function enableModalAlbum(images, initialIndex, fallbackTitle) {
+  if (!mediaModal || !mediaModalVisual || images.length <= 1) return;
+
+  mediaModal.classList.add("is-gallery-album-modal");
+  let activeIndex = Math.max(0, initialIndex);
+
+  const prev = document.createElement("button");
+  prev.type = "button";
+  prev.className = "modal-album-button modal-album-button-prev";
+  prev.setAttribute("aria-label", "Previous photo");
+  prev.textContent = "‹";
+
+  const next = document.createElement("button");
+  next.type = "button";
+  next.className = "modal-album-button modal-album-button-next";
+  next.setAttribute("aria-label", "Next photo");
+  next.textContent = "›";
+
+  const dots = document.createElement("div");
+  dots.className = "modal-album-dots";
+  dots.setAttribute("aria-label", "Preview photo selector");
+
+  const dotButtons = images.map((_, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "modal-album-dot";
+    button.setAttribute("aria-label", `Show photo ${index + 1}`);
+    button.addEventListener("click", () => showImage(index));
+    dots.appendChild(button);
+    return button;
+  });
+
+  function showImage(index) {
+    activeIndex = (index + images.length) % images.length;
+    setModalImage(images[activeIndex], fallbackTitle);
+    dotButtons.forEach((button, buttonIndex) => {
+      const isActive = buttonIndex === activeIndex;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-current", isActive ? "true" : "false");
+    });
+  }
+
+  prev.addEventListener("click", () => showImage(activeIndex - 1));
+  next.addEventListener("click", () => showImage(activeIndex + 1));
+
+  mediaModalVisual.append(prev, next, dots);
+  showImage(activeIndex);
+}
+
 function openMediaPreview(card) {
   if (!mediaModal || !mediaModalImage || !mediaModalTitle || !mediaModalDescription) return;
 
+  clearModalAlbumControls();
   mediaModal.classList.remove("is-person-modal");
-  const image = card.querySelector(".gallery-album-slide.is-active img") || card.querySelector("img");
+  const albumImages = Array.from(card.querySelectorAll(".gallery-album-slide img"));
+  const activeAlbumImage = card.querySelector(".gallery-album-slide.is-active img");
+  const image = activeAlbumImage || albumImages[0] || card.querySelector("img");
+  const initialIndex = Math.max(0, albumImages.indexOf(image));
   const title = card.querySelector("h3")?.textContent.trim() || image?.alt || "Image preview";
-  const description = card.querySelector("p")?.textContent.trim() || image?.alt || "";
+  const description = cardDescription(card) || image?.alt || "";
 
-  mediaModalImage.src = image?.currentSrc || image?.src || "";
-  mediaModalImage.alt = image?.alt || title;
+  setModalImage(image, title);
   mediaModalTitle.textContent = title;
   mediaModalDescription.textContent = description;
+  enableModalAlbum(albumImages, initialIndex, title);
   mediaModal.hidden = false;
   mediaModalClose?.focus();
 }
@@ -472,6 +548,7 @@ function openMediaPreview(card) {
 function openPersonPreview(card) {
   if (!mediaModal || !mediaModalImage || !mediaModalTitle || !mediaModalDescription) return;
 
+  clearModalAlbumControls();
   mediaModal.classList.add("is-person-modal");
   const useMobileDetails = window.matchMedia("(max-width: 760px)").matches;
   const image = card.querySelector("img");
@@ -488,8 +565,7 @@ function openPersonPreview(card) {
   const emailLink = card.querySelector(".person-email a[href^='mailto:']");
   const detailLinks = Array.from(card.querySelectorAll(".button-row a[href]"));
 
-  mediaModalImage.src = image?.currentSrc || image?.src || "";
-  mediaModalImage.alt = image?.alt || title;
+  setModalImage(image, title);
   mediaModalTitle.textContent = title;
   mediaModalDescription.innerHTML = "";
 
@@ -551,6 +627,7 @@ function openPersonPreview(card) {
 
 function closeMediaPreview() {
   if (!mediaModal) return;
+  clearModalAlbumControls();
   mediaModal.hidden = true;
 }
 
