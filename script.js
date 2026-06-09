@@ -203,24 +203,30 @@ function enhanceGalleryAlbums() {
       showSlide(activeIndex + 1);
     });
 
-    bindSwipeNavigation(album, {
-      previous() {
-        showSlide(activeIndex - 1);
-      },
-      next() {
-        showSlide(activeIndex + 1);
-      },
-      onSwipe() {
-        if (!card) return;
-        card.dataset.albumSwiped = "true";
-        window.setTimeout(() => {
-          delete card.dataset.albumSwiped;
-        }, 350);
-      },
-    });
+    if (supportsSwipeNavigation()) {
+      bindSwipeNavigation(album, {
+        previous() {
+          showSlide(activeIndex - 1);
+        },
+        next() {
+          showSlide(activeIndex + 1);
+        },
+        onSwipe() {
+          if (!card) return;
+          card.dataset.albumSwiped = "true";
+          window.setTimeout(() => {
+            delete card.dataset.albumSwiped;
+          }, 350);
+        },
+      });
+    }
 
     showSlide(activeIndex);
   });
+}
+
+function supportsSwipeNavigation() {
+  return window.matchMedia("(max-width: 760px)").matches;
 }
 
 function bindSwipeNavigation(target, handlers) {
@@ -233,6 +239,7 @@ function bindSwipeNavigation(target, handlers) {
 
   function onPointerDown(event) {
     if (event.button !== undefined && event.button !== 0) return;
+    if (event.target?.closest?.("button, a, input, textarea, select, [role='button']")) return;
     activePointerId = event.pointerId;
     startX = event.clientX;
     startY = event.clientY;
@@ -572,7 +579,11 @@ function enableModalAlbum(images, initialIndex, fallbackTitle) {
     button.type = "button";
     button.className = "modal-album-dot";
     button.setAttribute("aria-label", `Show photo ${index + 1}`);
-    button.addEventListener("click", () => showImage(index));
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      showImage(index);
+    });
     dots.appendChild(button);
     return button;
   });
@@ -587,16 +598,26 @@ function enableModalAlbum(images, initialIndex, fallbackTitle) {
     });
   }
 
-  prev.addEventListener("click", () => showImage(activeIndex - 1));
-  next.addEventListener("click", () => showImage(activeIndex + 1));
-  modalAlbumSwipeCleanup = bindSwipeNavigation(mediaModalVisual, {
-    previous() {
-      showImage(activeIndex - 1);
-    },
-    next() {
-      showImage(activeIndex + 1);
-    },
+  prev.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    showImage(activeIndex - 1);
   });
+  next.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    showImage(activeIndex + 1);
+  });
+  if (supportsSwipeNavigation()) {
+    modalAlbumSwipeCleanup = bindSwipeNavigation(mediaModalVisual, {
+      previous() {
+        showImage(activeIndex - 1);
+      },
+      next() {
+        showImage(activeIndex + 1);
+      },
+    });
+  }
 
   mediaModalVisual.append(prev, next, dots);
   showImage(activeIndex);
