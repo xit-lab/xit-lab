@@ -511,6 +511,35 @@ function getPersonCardName(card) {
   return heading?.dataset.fullName || heading?.textContent.trim() || "";
 }
 
+function normalizeCareerEntries() {
+  const careerPattern = /^(\d{4}(?:\.\d{2})?\s*-\s*(?:Present|\d{4}(?:\.\d{2})?)):\s*(.+)$/;
+
+  document.querySelectorAll(".person-meta li").forEach((item) => {
+    let period = item.querySelector(".career-period");
+    let detail = item.querySelector(".career-detail");
+
+    if (!period && !detail) {
+      const match = item.textContent.replace(/\s+/g, " ").trim().match(careerPattern);
+      if (!match) return;
+
+      period = document.createElement("span");
+      period.className = "career-period";
+      period.textContent = `${match[1]}:`;
+
+      detail = document.createElement("span");
+      detail.className = "career-detail";
+      detail.textContent = match[2];
+
+      item.textContent = "";
+      item.append(period, detail);
+    }
+
+    if (!detail || detail.dataset.careerFormatted === "true") return;
+    detail.textContent = detail.textContent.replace(/\s+/g, " ").trim();
+    detail.dataset.careerFormatted = "true";
+  });
+}
+
 function renderPersonEmails() {
   document.querySelectorAll(".person-card a[href^='mailto:']").forEach((link) => {
     const personBody = link.closest(".person-body");
@@ -867,6 +896,7 @@ enhanceGalleryAlbums();
 enhanceNewsCards();
 enhancePublicationLinks();
 splitPersonNames();
+normalizeCareerEntries();
 renderPersonEmails();
 renderPublications();
 highlightLabAuthors();
