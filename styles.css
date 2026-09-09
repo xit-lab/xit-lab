@@ -2015,15 +2015,15 @@ main section {
 .publication-group .pub-group-title { margin: 0 0 24px; color: #243d82; font-size: clamp(23px, 2.5vw, 30px); line-height: 1.35; }
 .flagship-label { color: #b62c3b; }
 .publication-group .publication-list { display: block; margin: 0; padding-left: 25px; }
-.publication-group .publication { display: list-item; padding: 0 0 0 4px; margin: 0 0 20px; border: 0; border-radius: 0; background: none; box-shadow: none; }
+.publication-group .publication { display: list-item; padding: 0 0 0 4px; margin: 0 0 10px; border: 0; border-radius: 0; background: none; box-shadow: none; }
 .publication-group .publication::marker { color: #59616e; font-size: 14px; }
-.publication-group .publication p { margin: 0; color: var(--text); font-size: 16px; line-height: 1.8; overflow-wrap: anywhere; }
+.publication-group .publication p { margin: 0; color: var(--text); font-size: 16px; line-height: 1.65; overflow-wrap: anywhere; }
 .publication-group .publication .date { color: #465267; font-size: inherit; font-weight: 400; }
 .publication-group .publication .venue { display: inline; margin: 0; font-size: inherit; }
 .publication-group .publication .venue-highlight { font-weight: 600; }
 .publication-group .publication-title-link { font-size: inherit; font-weight: 400; text-decoration: underline; }
 @media (max-width: 760px) {
   .publication-group { margin-top: 36px; }
-  .publication-group .publication p { font-size: 15px; line-height: 1.75; }
+  .publication-group .publication p { font-size: 15px; line-height: 1.65; }
   .publication-group .publication-list { padding-left: 23px; }
 }
