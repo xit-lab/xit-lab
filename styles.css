@@ -2022,6 +2022,8 @@ main section {
 .publication-group .publication .venue { display: inline; margin: 0; font-size: inherit; }
 .publication-group .publication .venue, .publication-group .publication .venue-highlight { font-weight: 400; }
 .publication-group .conference-venue { color: #b62c3b; font-weight: 400; }
+[aria-labelledby="pub-journal-title"] .publication .venue,
+[aria-labelledby="pub-journal-title"] .publication .venue-highlight { color: var(--teal-dark); }
 .publication-group .publication-title-link { font-size: inherit; font-weight: 400; text-decoration: underline; }
 @media (max-width: 760px) {
   .publication-group { margin-top: 36px; }
