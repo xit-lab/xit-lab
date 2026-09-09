@@ -420,7 +420,7 @@ function enhancePublicationLinks() {
     if (!publication || publication.dataset.publicationEnhanced) return;
 
     const href = link.href;
-    const title = publication.querySelector("h3");
+    const title = publication.querySelector(".publication-title");
     if (!title) return;
 
     publication.dataset.publicationEnhanced = "true";
@@ -433,7 +433,7 @@ function enhancePublicationLinks() {
     inlineLink.rel = "noopener";
     inlineLink.textContent = "[link]";
     inlineLink.setAttribute("aria-label", `Open ${title.textContent.trim()}`);
-    title.append(" ", inlineLink);
+    publication.querySelector("p").append(" ", inlineLink);
   });
 }
 
