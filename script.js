@@ -7,8 +7,6 @@ const newsItems = Array.from(document.querySelectorAll(".news-item"));
 const newsToggle = document.querySelector(".news-toggle");
 const projectItems = Array.from(document.querySelectorAll(".project-card"));
 const projectToggle = document.querySelector(".project-toggle");
-const pubPanels = Array.from(document.querySelectorAll(".pub-panel"));
-const pubToggle = document.querySelector(".pub-toggle");
 const mediaModal = document.querySelector("#media-modal");
 const mediaModalVisual = document.querySelector(".media-modal-visual");
 const mediaModalImage = document.querySelector("#media-modal-image");
@@ -20,7 +18,6 @@ const pageIds = new Set(["home", "research", "publications", "people", "gallery"
 let currentNewsFilter = "latest";
 let newsExpanded = false;
 let projectsExpanded = false;
-let publicationsExpanded = false;
 const itemAnimationTimers = new WeakMap();
 let modalAlbumSwipeCleanup = null;
 
@@ -413,46 +410,6 @@ if (projectToggle) {
   });
 }
 
-function activePubPanel() {
-  return pubPanels.find((panel) => !panel.hidden) || pubPanels[0];
-}
-
-function renderPublications(animate = false) {
-  const panel = activePubPanel();
-  if (!panel) return;
-
-  const publications = Array.from(panel.querySelectorAll(".publication"));
-  const visible = new Set(publicationsExpanded ? publications : publications.slice(0, 5));
-  publications.forEach((item) => setItemVisibility(item, visible.has(item), animate));
-
-  if (pubToggle) {
-    pubToggle.hidden = publications.length <= 5;
-    pubToggle.textContent = publicationsExpanded ? "Show less" : "Show all";
-    pubToggle.setAttribute("aria-expanded", String(publicationsExpanded));
-  }
-}
-
-document.querySelectorAll("[data-pub-tab]").forEach((button) => {
-  button.addEventListener("click", () => {
-    const target = button.dataset.pubTab;
-    publicationsExpanded = false;
-    document.querySelectorAll("[data-pub-tab]").forEach((item) => {
-      item.classList.toggle("is-active", item === button);
-    });
-    document.querySelectorAll(".pub-panel").forEach((panel) => {
-      panel.hidden = panel.id !== target;
-    });
-    renderPublications(false);
-  });
-});
-
-if (pubToggle) {
-  pubToggle.addEventListener("click", () => {
-    publicationsExpanded = !publicationsExpanded;
-    renderPublications(true);
-  });
-}
-
 function enhanceNewsCards() {
   newsItems.forEach((item) => item.classList.remove("has-card-links"));
 }
@@ -807,9 +764,10 @@ function highlightLabAuthors() {
   const names = ["Hee-Youl Kwak", "Dae-Young Yun", "DaeYoung Yun", "Daeyoung Yun", "H.-Y. Kwak", "D.-Y. Yun"];
   const pattern = new RegExp(`(${names.map((name) => name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`, "g");
 
-  document.querySelectorAll(".pub-panel .publication p").forEach((paragraph) => {
+  document.querySelectorAll(".publication-list .publication p").forEach((paragraph) => {
     const walker = document.createTreeWalker(paragraph, NodeFilter.SHOW_TEXT, {
       acceptNode(node) {
+        if (node.parentElement.closest("strong, .venue")) return NodeFilter.FILTER_REJECT;
         pattern.lastIndex = 0;
         return pattern.test(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
       },
@@ -869,7 +827,7 @@ function placeholderSvg(label, type) {
       <circle cx="740" cy="120" r="92" fill="#f3b23c" fill-opacity="0.22"/>
       <circle cx="170" cy="${isPerson ? 720 : 450}" r="120" fill="#008c8c" fill-opacity="0.12"/>
       <path d="M105 ${isPerson ? 610 : 365} C250 250, 430 ${isPerson ? 700 : 430}, 785 230" fill="none" stroke="#008c8c" stroke-opacity="0.34" stroke-width="6"/>
-      <g font-family="Pretendard, Arial, sans-serif" text-anchor="middle">
+      <g font-family="Helvetica Neue, Arial, Noto Sans KR, sans-serif" text-anchor="middle">
         <text x="450" y="${isPerson ? 430 : 255}" fill="#17312e" font-size="${isPerson ? 118 : 38}" font-weight="850">${title}</text>
         <text x="450" y="${isPerson ? 495 : 310}" fill="#58706b" font-size="${isPerson ? 28 : 24}" font-weight="650">${subtitle}</text>
       </g>
@@ -898,7 +856,6 @@ enhancePublicationLinks();
 splitPersonNames();
 normalizeCareerEntries();
 renderPersonEmails();
-renderPublications();
 highlightLabAuthors();
 stabilizeImages();
 enhanceImageCards();

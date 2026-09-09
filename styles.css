@@ -15,9 +15,9 @@
 }
 
 @font-face {
-  font-family: "Pretendard";
-  src: url("assets/fonts/PretendardVariable.woff2") format("woff2");
-  font-weight: 45 920;
+  font-family: "Noto Sans KR";
+  src: url("assets/fonts/NotoSansKR.ttf") format("truetype");
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
@@ -38,7 +38,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--text);
-  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Noto Sans KR", sans-serif;
   font-size: 16px;
   line-height: 1.65;
 }
@@ -148,7 +148,7 @@ img {
   isolation: isolate;
   color: #fff;
   background-image:
-    linear-gradient(90deg, rgba(6, 17, 36, 0.94), rgba(8, 23, 45, 0.68) 42%, rgba(8, 23, 45, 0.12)),
+    linear-gradient(90deg, rgba(239, 247, 255, 0.96), rgba(230, 243, 255, 0.88) 45%, rgba(219, 238, 255, 0.55)),
     url("assets/hero-xit-lab-navy.png");
   background-size: cover;
   background-position: center top;
@@ -2001,3 +2001,10 @@ main section {
     grid-column: 2;
   }
 }
+
+/* A brighter home banner with dark, readable text. */
+.hero, .hero h1, .hero .stat strong { color: #173656; }
+.hero .eyebrow { color: #365f87; }
+.hero-copy, .hero .stat span { color: #324e69; }
+.hero .stat, .hero .stat:hover { background: rgba(255,255,255,.75); border-color: rgba(80,120,160,.2); color: #173656; box-shadow: 0 8px 24px rgba(34,70,105,.06); }
+.publication-list { display: grid; gap: 10px; margin-top: 24px; }
