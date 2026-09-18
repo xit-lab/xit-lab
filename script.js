@@ -614,7 +614,7 @@ function openMediaPreview(card) {
 
   clearModalAlbumControls();
   mediaModal.classList.remove("is-person-modal");
-  const albumImages = Array.from(card.querySelectorAll(".gallery-album-slide img"));
+  const albumImages = Array.from(card.querySelectorAll(".gallery-album-slide img, .research-figure img"));
   const activeAlbumImage = card.querySelector(".gallery-album-slide.is-active img");
   const image = activeAlbumImage || albumImages[0] || card.querySelector("img");
   const initialIndex = Math.max(0, albumImages.indexOf(image));

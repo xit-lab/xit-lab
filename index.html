@@ -10,6 +10,7 @@
     >
     <meta name="google-site-verification" content="Pvtx0VenXkjbgRDNvVfH93DyX0wLPISg8YOz4bUAv1I">
   <link rel="stylesheet" href="styles.css?v=33">
+  <link rel="stylesheet" href="design-preview.css?v=8">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
@@ -17,7 +18,7 @@
     <header class="site-header">
       <div class="nav-wrap">
         <a class="brand" href="#home" aria-label="xIT Lab home">
-          <img class="brand-logo" src="assets/xit-logo.png" alt="xIT">
+          <img class="brand-logo" src="assets/xit-logo.png" alt="xIT"><span class="brand-description">Next-Generation<br>Information Technology Lab.</span>
         </a>
         <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
         <nav class="nav-links" aria-label="Primary navigation">
@@ -34,33 +35,37 @@
     <main id="main">
       <section class="hero page-view" id="home" data-page="home">
         <div class="hero-inner">
-          <p class="eyebrow">University of Ulsan · Department of Electrical, Electronic, and Computer Engineering</p>
-          <h1>Next-Generation Information Technology (xIT) Lab.</h1>
+          <p class="eyebrow">xIT Lab · University of Ulsan</p>
+          <h1>Reliable Information.<br><span class="hero-name-accent">Intelligent Systems.</span></h1><p class="hero-lab-name">Next-Generation Information Technology (xIT) Lab.</p>
           <p class="hero-copy">
-            We advance error correction codes, AI-driven communication systems, quantum error correction, and reliable
-            information technologies for wireless communications, semiconductor devices, DNA data storage, and quantum computing.
+            We develop coding and learning methods for reliable information systems. Our research spans AI-driven
+            error correction, quantum error correction, and trustworthy AI—with applications in communications,
+            data storage, and quantum computing.
           </p>
-          <div class="hero-stats" aria-label="Lab highlights">
-            <div class="stat"><strong>Error-Correcting Code (ECC)</strong><span>AI-enhanced ECC for robust next-generation communication systems</span></div>
-            <div class="stat"><strong>Large Language Model (LLM)</strong><span>LLM text watermark for the responsible use of AI</span></div>
-            <div class="stat"><strong>Quantum Computing</strong><span>Frontier information technologies for quantum error correction.</span></div>
-          </div>
+<div class="hero-footnote"><span>INFORMATION · INTELLIGENCE · IMPACT</span><span>UNIVERSITY OF ULSAN</span></div>
         </div>
       </section>
 
-      <section class="section page-view" id="overview" data-page="home">
+      <section class="section page-view home-agenda" data-page="home" aria-labelledby="agenda-title">
+        <div class="section-inner">
+          <h2 class="section-kicker agenda-heading" id="agenda-title">01 / Research Directions</h2>
+          <div class="research-directions">
+            <a href="#research" data-page-link><span class="direction-index">01<span aria-hidden="true">↗</span></span><h3>Neural ECC Decoder</h3><p>Learning to recover information from noisy signals.</p></a>
+            <a href="#research" data-page-link><span class="direction-index">02<span aria-hidden="true">↗</span></span><h3>RL ECC Construction</h3><p>Discovering code structures through reinforcement learning.</p></a>
+            <a href="#research" data-page-link><span class="direction-index">03<span aria-hidden="true">↗</span></span><h3>Quantum Error Correction</h3><p>Protecting quantum information against noise.</p></a>
+            <a href="#research" data-page-link><span class="direction-index">04<span aria-hidden="true">↗</span></span><h3>LLM Text Watermark</h3><p>Tracing the provenance of AI-generated text.</p></a>
+            <a href="#research" data-page-link><span class="direction-index">05<span aria-hidden="true">↗</span></span><h3>AI Image Detection</h3><p>Identifying synthetic images and verifying authenticity.</p></a>
+          </div>
+        </div>
+      </section>
+<section class="section page-view" id="overview" data-page="home">
         <div class="section-inner">
           <div class="overview-grid home-overview-grid">
             <article class="prose-panel">
-              <p>
-                The Next-Generation Information Technology (xIT) Lab. at the University of Ulsan researches error
-                correction codes, AI-driven communication systems, quantum error correction, and reliable information
-                technologies for robust next-generation systems.
-              </p>
-              <p>
-                xIT Lab에서는 ECC, AI, 양자 오류 정정, LLM 워터마킹과 같은 기술을 바탕으로 통신 시스템, 반도체,
-                DNA 저장장치, 양자 컴퓨팅의 reliability와 performance를 높이는 연구를 수행합니다.
-              </p>
+              <p class="section-kicker">02 / Inside xIT</p>
+              <h2>Connecting ideas.<br><em>Advancing research.</em></h2>
+              <p>At the University of Ulsan, xIT Lab brings together coding theory, machine learning, and information science to explore how information can be transmitted, stored, and trusted.</p>
+              <p>We connect theoretical insights with practical algorithms, working across classical and quantum systems. Through shared ideas and collaborative research, we aim to turn fundamental questions into reliable technologies.</p>
             </article>
             <aside class="home-album" aria-label="Lab photo album">
               <div class="album-track">
@@ -92,7 +97,7 @@
         <div class="section-inner">
           <div class="section-head">
             <div>
-              <h2>Recent News</h2>
+              <p class="section-kicker">03 / Lab updates</p><h2>Recent News<span class="accent-dot">.</span></h2>
             </div>
           </div>
           <div class="news-toolbar" aria-label="Filter news">
@@ -103,24 +108,24 @@
             <button class="chip" type="button" data-news-filter="press">Press</button>
           </div>
           <div class="news-list">
-            <article class="news-item" data-category="project"><div><span class="tag">Project</span><time>2026/09</time></div><p>"AI 기반 오류정정 기술의 양자오류정정으로의 확장 및 고도화" (Extension and Advancement of AI-Based Error-Correction Technology for Quantum Error Correction), NRF, 2026.09-2028.08</p></article>
+            <article class="news-item" data-category="project"><div><span class="tag">Project</span><time>2026/09</time></div><p>"Extension and Advancement of AI-Based Error-Correction Technology for Quantum Error Correction", NRF, 2026.09-2028.08</p></article>
             <article class="news-item" data-category="project"><div><span class="tag">Project</span><time>2026/06</time></div><p>"On-Site Implementation of an AI Vision Model-Based Real-Time Defect Detection System in Manufacturing Processes", NRF, 2026.07-2026.12</p></article>
-            <article class="news-item" data-category="award"><div><span class="tag">Award</span><time>2026/06</time></div><p>학부 논문상 장려상, 박시우 학부연구생, "동적 균형 할당 기반 강건한 LLM 멀티비트 워터마킹", 2026 한국통신학회 하계종합학술발표회</p></article>
-            <article class="news-item" data-category="press"><div><span class="tag">Press</span><time>2025/07</time></div><p>"포스텍·서울대 등 연구팀, AI 기반 채널 복호기 기술 개발", <a href="https://n.news.naver.com/mnews/article/421/0008927861?sid=102" target="_blank" rel="noopener">뉴시스 보도</a></p></article>
+            <article class="news-item" data-category="award"><div><span class="tag">Award</span><time>2026/06</time></div><p>Undergraduate Paper Encouragement Award, Si-Woo Park, "Robust LLM Multi-Bit Watermarking via Dynamic Balanced Allocation", KICS Summer Conference 2026</p></article>
+            <article class="news-item" data-category="press"><div><span class="tag">Press</span><time>2025/07</time></div><p>"Researchers at POSTECH, Seoul National University, and partner institutions develop AI-based channel decoding technology", <a href="https://n.news.naver.com/mnews/article/421/0008927861?sid=102" target="_blank" rel="noopener">Read coverage</a></p></article>
             <article class="news-item" data-category="paper"><div><span class="tag">Paper</span><time>2026/01</time></div><p>"Efficient Message-Passing Transformer for Error Correcting Codes", 2026 ICLR, Rio, Brazil</p></article>
-            <article class="news-item" data-category="award"><div><span class="tag">Award</span><time>2025/11</time></div><p>학부 논문상 장려상, 임성민 학부연구생, "5G 표준 LDPC 부호의 puncturing 기법 최적화", 2025 한국통신학회 추계종합학술발표회</p></article>
-            <article class="news-item" data-category="press"><div><span class="tag">Press</span><time>2025/07</time></div><p>"성균관대 김상효 교수 연구팀, AI 기반 오류정정부호 기술 개발", <a href="https://www.newsis.com/view/NISX20250730_0003272249" target="_blank" rel="noopener">뉴시스 보도</a></p></article>
+            <article class="news-item" data-category="award"><div><span class="tag">Award</span><time>2025/11</time></div><p>Undergraduate Paper Encouragement Award, Seong-Min Lim, "Optimizing Puncturing Schemes for 5G Standard LDPC Codes", KICS Fall Conference 2025</p></article>
+            <article class="news-item" data-category="press"><div><span class="tag">Press</span><time>2025/07</time></div><p>"Prof. Sang-Hyo Kim’s team at Sungkyunkwan University develops AI-based error-correcting code technology", <a href="https://www.newsis.com/view/NISX20250730_0003272249" target="_blank" rel="noopener">Read coverage</a></p></article>
             <article class="news-item" data-category="project"><div><span class="tag">Project</span><time>2025/07</time></div><p>"Watermark Hiding Techniques for the Safe Industrial Application of Large Language Models", RISE, NRF, 2025.07-2026.01</p></article>
             <article class="news-item" data-category="project"><div><span class="tag">Project</span><time>2025/07</time></div><p>"AI office automation platform specialized in Korean for local businesses", RISE, NRF, 2025.07-2026.01</p></article>
-            <article class="news-item" data-category="award"><div><span class="tag">Award</span><time>2025/06</time></div><p>학부 논문상 장려상, 권형욱 학부연구생, "AWGN channel에서의 pre-training을 활용한 BSC 및 Rayleigh 채널에서 Error Correction Code Transformer의 성능 개선", 2025 한국통신학회 하계종합학술발표회</p></article>
+            <article class="news-item" data-category="award"><div><span class="tag">Award</span><time>2025/06</time></div><p>Undergraduate Paper Encouragement Award, Hyung-Wook Kwon, "Improving Error Correction Code Transformers on BSC and Rayleigh Channels through AWGN Pre-Training", KICS Summer Conference 2025</p></article>
             <article class="news-item" data-category="member"><div><span class="tag">Member</span><time>2025/03</time></div><p>Professor Yun joined our lab.</p></article>
             <article class="news-item" data-category="paper"><div><span class="tag">Paper</span><time>2025/01</time></div><p>"CrossMPT: Cross-attention Message-Passing Transformer for Error Correcting Codes", 2025 ICLR, Singapore</p></article>
             <article class="news-item" data-category="paper"><div><span class="tag">Paper</span><time>2025/01</time></div><p>"Multiple-Masks Error Correction Code Transformer for Short Block Codes", IEEE Journal on Selected Areas in Communications</p></article>
             <article class="news-item" data-category="paper"><div><span class="tag">Paper</span><time>2025/01</time></div><p>"Learning strategies for neural min-sum decoding of LDPC codes", ICT Express</p></article>
             <article class="news-item" data-category="paper"><div><span class="tag">Paper</span><time>2024/11</time></div><p>"Boosted Neural Decoders: Achieving Extreme Reliability of LDPC Codes for 6G Networks", IEEE Journal on Selected Areas in Communications</p></article>
-            <article class="news-item" data-category="award"><div><span class="tag">Award</span><time>2024/06</time></div><p>학부 최우수 논문상, 이주형 학부연구생, "Differential Evolution 기반 Check-Regular LDPC 부호 설계 기법", 2024 한국통신학회 하계종합학술발표회</p></article>
-            <article class="news-item" data-category="award"><div><span class="tag">Award</span><time>2024/04</time></div><p>Prof. Kwak, ICT Express Best Reviewer 수상</p></article>
-            <article class="news-item" data-category="award"><div><span class="tag">Award</span><time>2024/04</time></div><p>Best Paper Award, "이중 마스크 오류정정부호 트랜스포머", 제34회 통신정보 합동학술대회</p></article>
+            <article class="news-item" data-category="award"><div><span class="tag">Award</span><time>2024/06</time></div><p>Undergraduate Best Paper Award, Ju-Hyeong Lee, "Designing Check-Regular LDPC Codes Using Differential Evolution", KICS Summer Conference 2024</p></article>
+            <article class="news-item" data-category="award"><div><span class="tag">Award</span><time>2024/04</time></div><p>Prof. Kwak received the ICT Express Best Reviewer Award</p></article>
+            <article class="news-item" data-category="award"><div><span class="tag">Award</span><time>2024/04</time></div><p>Best Paper Award, "Double-Mask Error Correction Code Transformer", 34th Joint Conference on Communications and Information (JCCI)</p></article>
             <article class="news-item" data-category="paper"><div><span class="tag">Paper</span><time>2024/03</time></div><p>"Design of DNA Storage Coding Scheme with LDPC Codes and Interleaving", IEEE Transactions on NanoBioscience</p></article>
             <article class="news-item" data-category="paper"><div><span class="tag">Paper</span><time>2024/01</time></div><p>"PD-GLDPC Codes with Degree-1 Variable Nodes and Multi-Types of Component Codes", IEEE Communications Letters</p></article>
             <article class="news-item" data-category="paper"><div><span class="tag">Paper</span><time>2023/12</time></div><p>"Boosting Learning for LDPC Codes to Improve the Error-Floor Performance", 2023 NeurIPS, New Orleans, USA</p></article>
@@ -137,23 +142,23 @@
           <div class="research-grid">
             <article class="research-card">
               <img src="assets/photos/research/neural-ecc-decoder.png?v=2" alt="Neural ECC Decoder concept" loading="lazy">
-              <div><h3>Neural ECC Decoder</h3><p>Transformer-based and neural message-passing decoders that improve reliability for modern error-correcting codes.</p></div>
+              <div><h3>Neural ECC Decoder</h3><p>Neural decoding combines error-correcting codes with machine learning to recover information from noisy signals, balancing accuracy, complexity, and adaptability.</p></div>
             </article>
             <article class="research-card">
               <img src="assets/photos/research/rl-ecc-construction.png?v=2" alt="RL ECC Construction concept" loading="lazy">
-              <div><h3>RL ECC Construction</h3><p>Reinforcement learning methods for discovering strong code structures under practical communication constraints.</p></div>
+              <div><h3>RL ECC Construction</h3><p>Reinforcement learning explores and optimizes error-correcting code structures, balancing error resilience, code rate, and decoding complexity.</p></div>
             </article>
             <article class="research-card">
-              <img src="assets/photos/research/quantum-error-correction.png?v=2" alt="Quantum Error Correction concept" loading="lazy">
-              <div><h3>Quantum Error Correction</h3><p>Coding and decoding strategies for protecting quantum information against noise and decoherence.</p></div>
+              <figure class="research-figure quantum-figures"><img src="assets/photos/research/lnbp-main.svg" alt="L-NBP architecture, Figure 2 (2026)" loading="lazy"><figcaption>L-NBP decoder architecture</figcaption></figure>
+              <div><h3>Quantum Error Correction</h3><p>Quantum error correction protects quantum information from noise and decoherence by encoding logical qubits across physical qubits and using error syndromes to guide recovery.</p></div>
             </article>
             <article class="research-card">
-              <img src="assets/photos/research/llm-text-watermark.png?v=2" alt="LLM Text Watermark concept" loading="lazy">
-              <div><h3>LLM Text Watermark</h3><p>Robust text watermarking techniques that support responsible deployment and provenance tracking of language models.</p></div>
+              <figure class="research-figure weavemark-figure"><img src="assets/photos/research/weavemark-main.png" alt="WeaveMark Figure 1: coded payload spreading and soft-decision ECC decoding" loading="lazy"><figcaption>WeaveMark · Coded payload spreading</figcaption></figure>
+              <div><h3>LLM Text Watermark</h3><p>Text watermarking embeds detectable signals into language model outputs to support provenance verification and source attribution while preserving text quality.</p></div>
             </article>
             <article class="research-card">
               <img class="thumbnail-align-left" src="assets/photos/research/ai-image-detection.png?v=2" alt="AI Image Detection concept" loading="lazy">
-              <div><h3>AI Image Detection</h3><p>Learning-based detectors for identifying AI-generated images and protecting media authenticity.</p></div>
+              <div><h3>AI Image Detection</h3><p>AI image detection analyzes visual and statistical patterns to distinguish synthetic images from real photographs, supporting media authenticity and digital forensics.</p></div>
             </article>
           </div>
 
@@ -161,47 +166,47 @@
           <div class="projects-grid">
             <article class="project-card">
               <p class="project-period">Sep. 2026 - Aug. 2028</p>
-              <h3><span class="project-title-ko">AI 기반 오류정정 기술의 양자오류정정으로의 확장 및 고도화</span><span class="project-title-en">Extension and Advancement of AI-Based Error-Correction Technology for Quantum Error Correction</span></h3>
+              <h3><span class="project-title-en">Extension and Advancement of AI-Based Error-Correction Technology for Quantum Error Correction</span></h3>
               <p class="project-sponsor">National Research Foundation of Korea (NRF)</p>
             </article>
             <article class="project-card">
               <p class="project-period">July 2026 - Dec. 2026</p>
-              <h3><span class="project-title-ko">AI 비전 모델 기반 제조 공정 실시간 결함 검출 시스템의 현장 적용</span><span class="project-title-en">On-Site Implementation of an AI Vision Model-Based Real-Time Defect Detection System in Manufacturing Processes</span></h3>
+              <h3><span class="project-title-en">On-Site Implementation of an AI Vision Model-Based Real-Time Defect Detection System in Manufacturing Processes</span></h3>
               <p class="project-sponsor">National Research Foundation of Korea (NRF)</p>
             </article>
             <article class="project-card">
               <p class="project-period">July 2025 - Jan. 2026</p>
-              <h3><span class="project-title-ko">지역 기업을 위한 한국어 특화 AI 사무 자동화 플랫폼</span><span class="project-title-en">AI office automation platform specialized in Korean for local businesses</span></h3>
+              <h3><span class="project-title-en">AI office automation platform specialized in Korean for local businesses</span></h3>
               <p class="project-sponsor">National Research Foundation of Korea (NRF)</p>
             </article>
             <article class="project-card">
               <p class="project-period">July 2025 - Jan. 2027</p>
-              <h3><span class="project-title-ko">대형언어모델의 안전한 산업적 활용을 위한 워터마크 은닉 기술</span><span class="project-title-en">Watermark Hiding Techniques for the Safe Industrial Application of Large Language Models</span></h3>
+              <h3><span class="project-title-en">Watermark Hiding Techniques for the Safe Industrial Application of Large Language Models</span></h3>
               <p class="project-sponsor">National Research Foundation of Korea (NRF)</p>
             </article>
             <article class="project-card">
               <p class="project-period">Apr. 2024 - Dec. 2032</p>
-              <h3><span class="project-title-ko">무선통신 진화를 위한 고도화 채널 코딩 및 채널 추정 기술 네트워크 연구센터</span><span class="project-title-en">Network Research Center: Advanced channel coding and channel estimation technologies for wireless communication evolution</span></h3>
+              <h3><span class="project-title-en">Network Research Center: Advanced channel coding and channel estimation technologies for wireless communication evolution</span></h3>
               <p class="project-sponsor">Institute for Information & Communication Technology Planning & Evaluation (IITP)</p>
             </article>
             <article class="project-card">
               <p class="project-period">June 2023 - May 2026</p>
-              <h3><span class="project-title-ko">LDPC 부호의 한계 극복을 통한 응용 분야 확대</span><span class="project-title-en">Expanding the application of LDPC codes by overcoming their limitations</span></h3>
+              <h3><span class="project-title-en">Expanding the application of LDPC codes by overcoming their limitations</span></h3>
               <p class="project-sponsor">National Research Foundation of Korea (NRF)</p>
             </article>
             <article class="project-card finished">
               <p class="project-period">June 2021 - Dec. 2024 <span>Finished</span></p>
-              <h3><span class="project-title-ko">SSD를 위한 채널 코딩 및 학습 기반 자원 최적화</span><span class="project-title-en">Channel coding and learning-based resource optimization for SSD</span></h3>
+              <h3><span class="project-title-en">Channel coding and learning-based resource optimization for SSD</span></h3>
               <p class="project-sponsor">Samsung Electronics</p>
             </article>
             <article class="project-card finished">
               <p class="project-period">June 2023 - Feb. 2024 <span>Finished</span></p>
-              <h3><span class="project-title-ko">자율주행차 안전성 향상을 위한 AI 기반 신호 설계</span><span class="project-title-en">Designing AI-based signals to enhance the safety of autonomous vehicles</span></h3>
+              <h3><span class="project-title-en">Designing AI-based signals to enhance the safety of autonomous vehicles</span></h3>
               <p class="project-sponsor">Ulsan-Gyeongnam Innovation Platform Future Mobility Division</p>
             </article>
             <article class="project-card finished">
               <p class="project-period">June 2021 - Dec. 2023 <span>Finished</span></p>
-              <h3><span class="project-title-ko">Tbps급 초고속 통신을 위한 초고속 저전력 채널 코딩 기술 연구</span><span class="project-title-en">Research on ultra-high-speed, low-power channel coding technology for terabit-per-second (Tbps) level high-speed communication</span></h3>
+              <h3><span class="project-title-en">Research on ultra-high-speed, low-power channel coding technology for terabit-per-second (Tbps) level high-speed communication</span></h3>
               <p class="project-sponsor">Electronics and Telecommunications Research Institute (ETRI)</p>
             </article>
           </div>
@@ -317,7 +322,7 @@
             <article class="person-card">
               <img src="assets/photos/people/hee-youl-kwak.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUD26m4GtCsWi8JbG_NOhQs95KLJ956MxxE1A9KciWQBvtjkQvpEFaFr5ksD6sKNpDNdI3jcdlxOWbc6V4tuJcCDW_hqlawGvdqiiR9SsUT9PuvNO3LI7r4UBLJTg9t_lyQcqINyjz7XfTov_mXs-EZBE2S4RwwzQi9hmGEQOqF8xJLpe9_ZSPKLLo8vIosQrEgxEny0r0XgLaDHcGIozixp_AXwYQV30rwgRPwMu9o=w1280" alt="Hee-Youl Kwak" loading="lazy">
               <div class="person-body">
-                <h3>Hee-Youl Kwak 곽희열</h3>
+                <h3>Hee-Youl Kwak</h3>
                 <span class="person-role">Assistant Professor</span>
                 <ul class="person-meta">
                   <li data-mobile-detail="Assistant Professor, EECE, University of Ulsan"><span class="career-period">2022.09 - Present: </span><span class="career-detail">Assistant Professor, School of Electrical, Electronics, and Computer Engineering, University of Ulsan (UOU), Republic of Korea</span></li>
@@ -332,7 +337,7 @@
             <article class="person-card">
               <img src="assets/photos/people/dae-young-yun.png" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUBnhcQPXoej24RfkRjO3L23QeiTza0DxGzVHCXnzJpaadkHH7ZHZqfWt62lxS4i0riRtKVo7fOxfX2mtmvoKlAMP-Kl4ScfGOYRbIhiGaTg8wijKR9jgwVXX14UA6kmhMD5O6uX6MseXnaps8fslHm_YxKiS5YYi74B-Kjv2gLu39xNftXorw0egrYUOIZTn8ly0gHVUBc2vbQ-SfLWONSyuSJF9Nmzaemqog-mXGQ=w1280" alt="Dae-Young Yun" loading="lazy">
               <div class="person-body">
-                <h3>Dae-Young Yun 윤대영</h3>
+                <h3>Dae-Young Yun</h3>
                 <span class="person-role">Assistant Professor</span>
                 <ul class="person-meta">
                   <li data-mobile-detail="Assistant Professor, EECE, University of Ulsan"><span class="career-period">2025.03 - Present: </span><span class="career-detail">Assistant Professor, School of Electrical, Electronics, and Computer Engineering, University of Ulsan (UOU), Republic of Korea</span></li>
@@ -355,31 +360,31 @@
 
           <h3 class="people-section-title">Master Students</h3>
           <div class="people-grid">
-            <article class="person-card"><img src="assets/photos/people/jae-hwan-kim.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUBHJqPd6p1c7pkya35IU2UXDXUkIfCDJv-SeiTwIxDE_53a_TKQ0v38HAkUd8AGEdAtAyRaBX3M1umv45u7u-FaqQKGyqeCpHgLKrIxENbIdrYdWa4mBGt8R5PwUYNSreoaNXL4ebeB6rPpn-SZh1BgWnnaRaVrabQJpka6O9Xqo7WVBBNm1XPjIhrGzKlIPsnJg1iWA2TZgnJ-CW5t8gSH9JyNni9YqrWXfqkQ=w1280" alt="Jae-Hwan Kim" loading="lazy"><div class="person-body"><h3>Jae-Hwan Kim 김재환</h3><span class="person-role">Master Student</span><ul class="person-meta"><li>2024.09 - Present: MS, University of Ulsan</li><li>2017.03 - 2024.02: BS, University of Ulsan</li><li>Hobbies: Music, Watching Movies</li><li>Research Area: Error-Correcting Code, AI automation</li></ul><div class="button-row"><a class="link-pill" href="mailto:jerry9832@naver.com">Email</a></div></div></article>
-            <article class="person-card"><img src="assets/photos/people/ju-hyeong-lee.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUBfovheYSkbd-4rkSizhWKTdOg1tVKRCIjXCke0iy2NdnisgD-DAtofrkdkrBCf4YjPr94F8Yi738M6-fOy9OkVXgkuofsSb-JT-gIHiwuaS4SRdAMooIr9hEeu5RCSdiq1-nBstRPEigete0jQ439uWJiTJ8U2hrkA53T2u5lpl97WzHT1WY5N6g1gBfS9sIcxNb2VdU1MnQNAn9ocyZ2LVcdwtwk2o03VSnOrGCo=w1280" alt="Ju-Hyeong Lee" loading="lazy"><div class="person-body"><h3>Ju-Hyeong Lee 이주형</h3><span class="person-role">Master Student</span><ul class="person-meta"><li>2024.03 - Present: MS, University of Ulsan</li><li>2018.03 - 2024.02: BS, University of Ulsan</li><li>Hobbies: Fitness, Football, Movies</li><li>Research Area: Error-Correcting Code, Text Watermark for LLM</li></ul><div class="button-row"><a class="link-pill" href="mailto:wngud387@mail.ulsan.ac.kr">Email</a></div></div></article>
-            <article class="person-card"><img src="assets/photos/people/haider-nawaz.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUBoVdZajsWCnIPpjZ38ZrJ-mNT5zZInFIEvvag4cYXLmIHwTdcfauKmdi2_layu7rUTE3yQLzpfemMyb4VzL38xGIZUcSMrvisWtArTRfzCgSZCx3N5Y4o5w7Fy3YUu5_wI-b4zO45owhFn4XQ81WgERok3dmaVouvMS1eeg3TnBjb3-NF-Ed_k0UN38dTryUmOVgltH6wDY9_xRierfnMP6jy8qS5f_rn5AVXcXgM=w1280" alt="Haider Nawaz" loading="lazy"><div class="person-body"><h3>Haider Nawaz 하이더 나와즈</h3><span class="person-role">Master Student</span><ul class="person-meta"><li>2018 - 2022: BS, UET Lahore, Pakistan</li><li>Hobbies: Football, Movies, Music</li><li>Research Area: Error-Correcting Code</li></ul><div class="button-row"><a class="link-pill" href="mailto:haidernawaz101@gmail.com">Email</a></div></div></article>
-            <article class="person-card"><img src="assets/photos/people/umar-khalid.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUCWfEnxRtwt1CczRaSpsQUOyjVBe_hpad3Q-dLveHbyLpyUIEKp27L7WInOmdMErhr9bE23X_F6mT1NQkj8jtDhD67AknBnAZzQt6p5dApFSe49Dho-5-gP1c4l6I5k-JW4qM-VXM4dLW6FDwD3aUgHGRR_2_Q-FVQoxHe_eKXPd89fsBmldZIn1Y3EMeQixbsQTc3dVv4zwgBAyqC472QUU8SImVJ1Af_sZ0a-L5Q=w1280" alt="Umar Khalid" loading="lazy"><div class="person-body"><h3>Umar Khalid 우마 칼리드</h3><span class="person-role">Master Student</span><ul class="person-meta"><li>Hobbies: Cricket, Movies, Music</li><li>Research Area: Error-Correcting Code</li></ul><div class="button-row"><a class="link-pill" href="mailto:umarkhalid496@gmail.com">Email</a></div></div></article>
-            <article class="person-card"><img src="assets/photos/people/fatima-rahman.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUAG6eRwqSntjX24Totqck8IEiUxt6kLTPZ0lpjHURxGZK6MuuUsH5mss0DFfvKlOxLnykjATrU0Hk_D4P_81C_u5tMtcQ2K-LruPia8Q7KUAQoRlDx1XLU_XRedgW6URt9h-kD1gIkDFPhswc_4iRV2HNSRgt_tvhVS2o1W4H0VN-fMwFPZmz_lAlXyNt-lIGbbhWwZc03SUZGZ2euvBx6dEg0Cn2GuEubouwdO=w1280" alt="Fatima Rahman" loading="lazy"><div class="person-body"><h3>Fatima Rahman 파티마 라흐만</h3><span class="person-role">Master Student</span><ul class="person-meta"><li>2026.03 - Present: MS, University of Ulsan</li><li>2020 - 2025: B.Sc. Engg, Khulna University, Bangladesh</li><li>Hobbies: Cooking, Reading, Sleeping</li><li>Research Area: Error-Correcting Codes</li></ul><div class="button-row"><a class="link-pill" href="mailto:mimi.fatimar@gmail.com">Email</a></div></div></article>
+            <article class="person-card"><img src="assets/photos/people/jae-hwan-kim.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUBHJqPd6p1c7pkya35IU2UXDXUkIfCDJv-SeiTwIxDE_53a_TKQ0v38HAkUd8AGEdAtAyRaBX3M1umv45u7u-FaqQKGyqeCpHgLKrIxENbIdrYdWa4mBGt8R5PwUYNSreoaNXL4ebeB6rPpn-SZh1BgWnnaRaVrabQJpka6O9Xqo7WVBBNm1XPjIhrGzKlIPsnJg1iWA2TZgnJ-CW5t8gSH9JyNni9YqrWXfqkQ=w1280" alt="Jae-Hwan Kim" loading="lazy"><div class="person-body"><h3>Jae-Hwan Kim</h3><span class="person-role">Master Student</span><ul class="person-meta"><li>2024.09 - Present: MS, University of Ulsan</li><li>2017.03 - 2024.02: BS, University of Ulsan</li><li>Hobbies: Music, Watching Movies</li><li>Research Area: Error-Correcting Code, AI automation</li></ul><div class="button-row"><a class="link-pill" href="mailto:jerry9832@naver.com">Email</a></div></div></article>
+            <article class="person-card"><img src="assets/photos/people/ju-hyeong-lee.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUBfovheYSkbd-4rkSizhWKTdOg1tVKRCIjXCke0iy2NdnisgD-DAtofrkdkrBCf4YjPr94F8Yi738M6-fOy9OkVXgkuofsSb-JT-gIHiwuaS4SRdAMooIr9hEeu5RCSdiq1-nBstRPEigete0jQ439uWJiTJ8U2hrkA53T2u5lpl97WzHT1WY5N6g1gBfS9sIcxNb2VdU1MnQNAn9ocyZ2LVcdwtwk2o03VSnOrGCo=w1280" alt="Ju-Hyeong Lee" loading="lazy"><div class="person-body"><h3>Ju-Hyeong Lee</h3><span class="person-role">Master Student</span><ul class="person-meta"><li>2024.03 - Present: MS, University of Ulsan</li><li>2018.03 - 2024.02: BS, University of Ulsan</li><li>Hobbies: Fitness, Football, Movies</li><li>Research Area: Error-Correcting Code, Text Watermark for LLM</li></ul><div class="button-row"><a class="link-pill" href="mailto:wngud387@mail.ulsan.ac.kr">Email</a></div></div></article>
+            <article class="person-card"><img src="assets/photos/people/haider-nawaz.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUBoVdZajsWCnIPpjZ38ZrJ-mNT5zZInFIEvvag4cYXLmIHwTdcfauKmdi2_layu7rUTE3yQLzpfemMyb4VzL38xGIZUcSMrvisWtArTRfzCgSZCx3N5Y4o5w7Fy3YUu5_wI-b4zO45owhFn4XQ81WgERok3dmaVouvMS1eeg3TnBjb3-NF-Ed_k0UN38dTryUmOVgltH6wDY9_xRierfnMP6jy8qS5f_rn5AVXcXgM=w1280" alt="Haider Nawaz" loading="lazy"><div class="person-body"><h3>Haider Nawaz </h3><span class="person-role">Master Student</span><ul class="person-meta"><li>2018 - 2022: BS, UET Lahore, Pakistan</li><li>Hobbies: Football, Movies, Music</li><li>Research Area: Error-Correcting Code</li></ul><div class="button-row"><a class="link-pill" href="mailto:haidernawaz101@gmail.com">Email</a></div></div></article>
+            <article class="person-card"><img src="assets/photos/people/umar-khalid.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUCWfEnxRtwt1CczRaSpsQUOyjVBe_hpad3Q-dLveHbyLpyUIEKp27L7WInOmdMErhr9bE23X_F6mT1NQkj8jtDhD67AknBnAZzQt6p5dApFSe49Dho-5-gP1c4l6I5k-JW4qM-VXM4dLW6FDwD3aUgHGRR_2_Q-FVQoxHe_eKXPd89fsBmldZIn1Y3EMeQixbsQTc3dVv4zwgBAyqC472QUU8SImVJ1Af_sZ0a-L5Q=w1280" alt="Umar Khalid" loading="lazy"><div class="person-body"><h3>Umar Khalid </h3><span class="person-role">Master Student</span><ul class="person-meta"><li>Hobbies: Cricket, Movies, Music</li><li>Research Area: Error-Correcting Code</li></ul><div class="button-row"><a class="link-pill" href="mailto:umarkhalid496@gmail.com">Email</a></div></div></article>
+            <article class="person-card"><img src="assets/photos/people/fatima-rahman.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUAG6eRwqSntjX24Totqck8IEiUxt6kLTPZ0lpjHURxGZK6MuuUsH5mss0DFfvKlOxLnykjATrU0Hk_D4P_81C_u5tMtcQ2K-LruPia8Q7KUAQoRlDx1XLU_XRedgW6URt9h-kD1gIkDFPhswc_4iRV2HNSRgt_tvhVS2o1W4H0VN-fMwFPZmz_lAlXyNt-lIGbbhWwZc03SUZGZ2euvBx6dEg0Cn2GuEubouwdO=w1280" alt="Fatima Rahman" loading="lazy"><div class="person-body"><h3>Fatima Rahman </h3><span class="person-role">Master Student</span><ul class="person-meta"><li>2026.03 - Present: MS, University of Ulsan</li><li>2020 - 2025: B.Sc. Engg, Khulna University, Bangladesh</li><li>Hobbies: Cooking, Reading, Sleeping</li><li>Research Area: Error-Correcting Codes</li></ul><div class="button-row"><a class="link-pill" href="mailto:mimi.fatimar@gmail.com">Email</a></div></div></article>
           </div>
 
           <h3 class="people-section-title">Intern</h3>
           <div class="people-grid">
-            <article class="person-card"><img src="assets/photos/people/hyung-wook-kwon.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUD7UXmj7OU5OrK-dkgQhwS2aw3l9hf4rtOYabeLg-IiFLVFyK8tzsTeW_LCYLt07UsQlhzlBqHuHM7W3lY2GXcI-ekXfgC-B61jkHAnJMlCn4f7jPqpGwvvIG5ttY6reY44YP-Cljwb0OSV2z2Lj_v8w7ONpO3HAPhEUsKxG23yNDw4oRueeudlbOqDhI9ZIHZZ1dhdbBcp_WuomSNKO5cYn7DhiQQxO5UGVtlD6Oo=w1280" alt="Hyung-Wook Kwon" loading="lazy"><div class="person-body"><h3>Hyung-Wook Kwon 권형욱</h3><span class="person-role">Intern</span><ul class="person-meta"><li>2025.09 - 2025.12: Intern, HD Hyundai Heavy Industries</li><li>2024.06 - 2025.09: BS, University of Ulsan</li><li>Hobby: Football, Music</li><li>Research Area: Error-Correcting Code</li></ul><div class="button-row"><a class="link-pill" href="mailto:ghk9927@mail.ulsan.ac.kr">Email</a></div></div></article>
-            <article class="person-card"><img src="assets/photos/people/si-woo-park.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUAG_wazF2Q_BfT_2aPjSMr4V43tq1EbFbSLMBq-kMqLJLoajBoquLQ3eNc1AvlDa2bH_VNuUxY6EjeHZxqn7-5Um1k0zU1rSG3j-pS_k5YVeSopAq_7xWA8bc7jYoUlxemyy3K8KpBql66ehY68khXpX3FEG3_6_pe7HrMr7J55wu_lA_2LmlsDefYrG-6jvAeEnvK5TUXl72E1k14JfT5yNGEaUrWsJMyEAPzZ=w1280" alt="Si-Woo Park" loading="lazy"><div class="person-body"><h3>Si-Woo Park 박시우</h3><span class="person-role">Intern</span><ul class="person-meta"><li>2021.03 - Present: BS, University of Ulsan</li><li>Hobby: Music</li><li>Research Area: LLM Text Watermark</li></ul><div class="button-row"><a class="link-pill" href="mailto:psw123480@naver.com">Email</a></div></div></article>
-            <article class="person-card"><img src="assets/photos/people/ik-hwan-jang.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUDHPTMyx5ytusnS0qPCgQ0wjcM_y90c_6YzBdROzR1eLMtyY1lw7-BUOJdV_tv4ZlenvOLYYSMXppslaDla6JQ5CBWv7toKnQx7EkXlAId9BfIhFhqt-dNYt7KUGpNbbRP4SsZtzoRrMUcaJVqaesQdSS-ggabMTTLMl5dEV9O6XOsqFzR9pRQz-eYPly3TPQs8W1N5KxnT2gn7e2KY8wvPnBa_mjZc5IyQbaTidWc=w1280" alt="Ik-Hwan Jang" loading="lazy"><div class="person-body"><h3>Ik-Hwan Jang 장익환</h3><span class="person-role">Intern</span><ul class="person-meta"><li>Hobby: Football, Swimming</li><li>Research Area: AI automation</li></ul><div class="button-row"><a class="link-pill" href="mailto:sh195210@gmail.com">Email</a></div></div></article>
-            <article class="person-card"><img src="assets/photos/people/sang-won-kim.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUBEF1xrZCFb73ktHNrcQAi317zV3bUset2bV1_KiLo-Agw1BGZMhK95OeyXhiGJWWablrMb3LLLZ8gwBcTYGp7fGx3pZ49U0e7BvcqH0TlKQD0zgt-vfyzzSYQ7eWykUE0GSlZl0wH0IHRZSLtmddFCuItDKtv0IQR8b0-1CtlyFybjya3JuLTCTzrlmYjUVSluliI5LKcbOaGdRT25ScU0qNdHQxaxx9zLifdqiu4=w1280" alt="Sang-Won Kim" loading="lazy"><div class="person-body"><h3>Sang-Won Kim 김상원</h3><span class="person-role">Intern</span><ul class="person-meta"><li>2021.03 - Present: BS, University of Ulsan</li><li>Hobby: Football</li><li>Research Area: Error Correcting Code</li></ul><div class="button-row"><a class="link-pill" href="mailto:kgrant0174@naver.com">Email</a></div></div></article>
-            <article class="person-card"><img src="assets/photos/people/kang-hyun-park.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUCo1-wm9NTHz1P6UxVFa9zIPN3v_GNIhNbecgwBR0H1_gxFQB8rPoYxL3yndNAtyqS7nM2oSZHCaA6_cb0c70ucUN50cm1pSI32-12KNoQm5ewHrgSKVcFSYL-GQeskxeya_n3Qj4L_nZMxHNk8CdjY9IfsMEAk8npseVRI6S41OecGfqeWMTysUshkxo0NPpT5FEfn6sytH_Y6V2yr37wjsvodNmni4d9uFCZAplU=w1280" alt="Kang-Hyun Park" loading="lazy"><div class="person-body"><h3>Kang-Hyun Park 박강현</h3><span class="person-role">Intern</span><ul class="person-meta"><li>2021.03 - Present: BS, University of Ulsan</li><li>Hobby: Music</li><li>Research Area: LLM Text Watermark</li></ul><div class="button-row"><a class="link-pill" href="mailto:qkrrkd90@gmail.com">Email</a></div></div></article>
-            <article class="person-card"><img src="assets/photos/people/yu-jin-kwon.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUCiy_tGF9vg_RVGEcg9TLhirT8naVQgrJH3V_K8lOO-nVV5OV0cLadlNMuDIsvtLgODgaCvsuJMnxyz0Vyp_AnXvfAzBmLR1GX5jV_SbnZ0JJQjOro7cro1sVNEr77v_6WwChs4Z8BaZA005npqKbQJjsRdORA78AjvvBENhVzzT_wIUr3uw1KkEb1DKVeLDggQVrY-Z3X_Oi_z2zH8ML020XEpYdawIQMweRNv=w1280" alt="Yu-Jin Kwon" loading="lazy"><div class="person-body"><h3>Yu-Jin Kwon 권유진</h3><span class="person-role">Intern</span><ul class="person-meta"><li>2022.03 - Present: BS, University of Ulsan</li><li>Hobby: Music</li><li>Research Area: Error Correcting Code</li></ul><div class="button-row"><a class="link-pill" href="mailto:zxcvcxz@mail.ulsan.ac.kr">Email</a></div></div></article>
+            <article class="person-card"><img src="assets/photos/people/hyung-wook-kwon.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUD7UXmj7OU5OrK-dkgQhwS2aw3l9hf4rtOYabeLg-IiFLVFyK8tzsTeW_LCYLt07UsQlhzlBqHuHM7W3lY2GXcI-ekXfgC-B61jkHAnJMlCn4f7jPqpGwvvIG5ttY6reY44YP-Cljwb0OSV2z2Lj_v8w7ONpO3HAPhEUsKxG23yNDw4oRueeudlbOqDhI9ZIHZZ1dhdbBcp_WuomSNKO5cYn7DhiQQxO5UGVtlD6Oo=w1280" alt="Hyung-Wook Kwon" loading="lazy"><div class="person-body"><h3>Hyung-Wook Kwon</h3><span class="person-role">Intern</span><ul class="person-meta"><li>2025.09 - 2025.12: Intern, HD Hyundai Heavy Industries</li><li>2024.06 - 2025.09: BS, University of Ulsan</li><li>Hobby: Football, Music</li><li>Research Area: Error-Correcting Code</li></ul><div class="button-row"><a class="link-pill" href="mailto:ghk9927@mail.ulsan.ac.kr">Email</a></div></div></article>
+            <article class="person-card"><img src="assets/photos/people/si-woo-park.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUAG_wazF2Q_BfT_2aPjSMr4V43tq1EbFbSLMBq-kMqLJLoajBoquLQ3eNc1AvlDa2bH_VNuUxY6EjeHZxqn7-5Um1k0zU1rSG3j-pS_k5YVeSopAq_7xWA8bc7jYoUlxemyy3K8KpBql66ehY68khXpX3FEG3_6_pe7HrMr7J55wu_lA_2LmlsDefYrG-6jvAeEnvK5TUXl72E1k14JfT5yNGEaUrWsJMyEAPzZ=w1280" alt="Si-Woo Park" loading="lazy"><div class="person-body"><h3>Si-Woo Park</h3><span class="person-role">Intern</span><ul class="person-meta"><li>2021.03 - Present: BS, University of Ulsan</li><li>Hobby: Music</li><li>Research Area: LLM Text Watermark</li></ul><div class="button-row"><a class="link-pill" href="mailto:psw123480@naver.com">Email</a></div></div></article>
+            <article class="person-card"><img src="assets/photos/people/ik-hwan-jang.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUDHPTMyx5ytusnS0qPCgQ0wjcM_y90c_6YzBdROzR1eLMtyY1lw7-BUOJdV_tv4ZlenvOLYYSMXppslaDla6JQ5CBWv7toKnQx7EkXlAId9BfIhFhqt-dNYt7KUGpNbbRP4SsZtzoRrMUcaJVqaesQdSS-ggabMTTLMl5dEV9O6XOsqFzR9pRQz-eYPly3TPQs8W1N5KxnT2gn7e2KY8wvPnBa_mjZc5IyQbaTidWc=w1280" alt="Ik-Hwan Jang" loading="lazy"><div class="person-body"><h3>Ik-Hwan Jang</h3><span class="person-role">Intern</span><ul class="person-meta"><li>Hobby: Football, Swimming</li><li>Research Area: AI automation</li></ul><div class="button-row"><a class="link-pill" href="mailto:sh195210@gmail.com">Email</a></div></div></article>
+            <article class="person-card"><img src="assets/photos/people/sang-won-kim.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUBEF1xrZCFb73ktHNrcQAi317zV3bUset2bV1_KiLo-Agw1BGZMhK95OeyXhiGJWWablrMb3LLLZ8gwBcTYGp7fGx3pZ49U0e7BvcqH0TlKQD0zgt-vfyzzSYQ7eWykUE0GSlZl0wH0IHRZSLtmddFCuItDKtv0IQR8b0-1CtlyFybjya3JuLTCTzrlmYjUVSluliI5LKcbOaGdRT25ScU0qNdHQxaxx9zLifdqiu4=w1280" alt="Sang-Won Kim" loading="lazy"><div class="person-body"><h3>Sang-Won Kim</h3><span class="person-role">Intern</span><ul class="person-meta"><li>2021.03 - Present: BS, University of Ulsan</li><li>Hobby: Football</li><li>Research Area: Error Correcting Code</li></ul><div class="button-row"><a class="link-pill" href="mailto:kgrant0174@naver.com">Email</a></div></div></article>
+            <article class="person-card"><img src="assets/photos/people/kang-hyun-park.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUCo1-wm9NTHz1P6UxVFa9zIPN3v_GNIhNbecgwBR0H1_gxFQB8rPoYxL3yndNAtyqS7nM2oSZHCaA6_cb0c70ucUN50cm1pSI32-12KNoQm5ewHrgSKVcFSYL-GQeskxeya_n3Qj4L_nZMxHNk8CdjY9IfsMEAk8npseVRI6S41OecGfqeWMTysUshkxo0NPpT5FEfn6sytH_Y6V2yr37wjsvodNmni4d9uFCZAplU=w1280" alt="Kang-Hyun Park" loading="lazy"><div class="person-body"><h3>Kang-Hyun Park</h3><span class="person-role">Intern</span><ul class="person-meta"><li>2021.03 - Present: BS, University of Ulsan</li><li>Hobby: Music</li><li>Research Area: LLM Text Watermark</li></ul><div class="button-row"><a class="link-pill" href="mailto:qkrrkd90@gmail.com">Email</a></div></div></article>
+            <article class="person-card"><img src="assets/photos/people/yu-jin-kwon.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUCiy_tGF9vg_RVGEcg9TLhirT8naVQgrJH3V_K8lOO-nVV5OV0cLadlNMuDIsvtLgODgaCvsuJMnxyz0Vyp_AnXvfAzBmLR1GX5jV_SbnZ0JJQjOro7cro1sVNEr77v_6WwChs4Z8BaZA005npqKbQJjsRdORA78AjvvBENhVzzT_wIUr3uw1KkEb1DKVeLDggQVrY-Z3X_Oi_z2zH8ML020XEpYdawIQMweRNv=w1280" alt="Yu-Jin Kwon" loading="lazy"><div class="person-body"><h3>Yu-Jin Kwon</h3><span class="person-role">Intern</span><ul class="person-meta"><li>2022.03 - Present: BS, University of Ulsan</li><li>Hobby: Music</li><li>Research Area: Error Correcting Code</li></ul><div class="button-row"><a class="link-pill" href="mailto:zxcvcxz@mail.ulsan.ac.kr">Email</a></div></div></article>
           </div>
 
           <h3 class="people-section-title">Alumni</h3>
           <ul class="alumni-list">
-            <li>Ju-Hyeong Lee 이주형, 2023.09 - 2025.02, M.S. @xIT Lab</li>
-            <li>Seok-Young Yun 윤석영, 2023.09 - 2024.09, HD Hyundai Heavy Industries</li>
-            <li>Yoon-Beom Shim 심윤범, 2023.09 - 2024.09</li>
-            <li>Hyung-Wook Kwon 권형욱, 2024.06 - 2025.09, M.S. @xIT Lab</li>
-            <li>Jin-Wook Choi 최진욱, 2024.09 - 2025.09</li>
-            <li>Seong-Min Lim 임성민, 2020.03 - 2025.12</li>
+            <li>Ju-Hyeong Lee, 2023.09 - 2025.02, M.S. @xIT Lab</li>
+            <li>Seok-Young Yun, 2023.09 - 2024.09, HD Hyundai Heavy Industries</li>
+            <li>Yoon-Beom Shim, 2023.09 - 2024.09</li>
+            <li>Hyung-Wook Kwon, 2024.06 - 2025.09, M.S. @xIT Lab</li>
+            <li>Jin-Wook Choi, 2024.09 - 2025.09</li>
+            <li>Seong-Min Lim, 2020.03 - 2025.12</li>
           </ul>
         </div>
       </section>
@@ -396,7 +401,7 @@
               <button class="gallery-album-button gallery-album-button-prev" type="button" data-gallery-prev aria-label="Previous photo">‹</button>
               <button class="gallery-album-button gallery-album-button-next" type="button" data-gallery-next aria-label="Next photo">›</button>
               <div class="gallery-album-dots" aria-label="ICML 2026 photo selector"></div>
-              <figcaption><h3>ICML 2026</h3><p class="memory-meta"><span>2026-07-06 ~ 11</span><span>서울</span></p></figcaption>
+              <figcaption><h3>ICML 2026</h3><p class="memory-meta"><span>2026-07-06 ~ 11</span><span>Seoul</span></p></figcaption>
             </figure>
             <figure class="gallery-card gallery-album-card">
               <div class="gallery-album-track" data-gallery-album>
@@ -409,7 +414,7 @@
               <button class="gallery-album-button gallery-album-button-prev" type="button" data-gallery-prev aria-label="Previous photo">‹</button>
               <button class="gallery-album-button gallery-album-button-next" type="button" data-gallery-next aria-label="Next photo">›</button>
               <div class="gallery-album-dots" aria-label="KICS Summer Conference 2026 photo selector"></div>
-              <figcaption><h3>KICS Summer Conference 2026</h3><p class="memory-meta"><span>2026-06-17 ~ 19</span><span>제주</span></p></figcaption>
+              <figcaption><h3>KICS Summer Conference 2026</h3><p class="memory-meta"><span>2026-06-17 ~ 19</span><span>Jeju</span></p></figcaption>
             </figure>
             <figure class="gallery-card gallery-album-card">
               <div class="gallery-album-track" data-gallery-album>
@@ -422,9 +427,9 @@
               <button class="gallery-album-button gallery-album-button-prev" type="button" data-gallery-prev aria-label="Previous photo">‹</button>
               <button class="gallery-album-button gallery-album-button-next" type="button" data-gallery-next aria-label="Next photo">›</button>
               <div class="gallery-album-dots" aria-label="JCCI 2026 photo selector"></div>
-              <figcaption><h3>JCCI 2026</h3><p class="memory-meta"><span>2026-04-15 ~ 17</span><span>여수</span></p></figcaption>
+              <figcaption><h3>JCCI 2026</h3><p class="memory-meta"><span>2026-04-15 ~ 17</span><span>Yeosu</span></p></figcaption>
             </figure>
-            <figure class="gallery-card"><img src="assets/photos/gallery/kics-winter-conference-2026.png" alt="KICS Winter Conference 2026" loading="lazy"><figcaption><h3>KICS Winter Conference 2026</h3><p class="memory-meta"><span>2026-02-04 ~ 06</span><span>용평</span></p></figcaption></figure>
+            <figure class="gallery-card"><img src="assets/photos/gallery/kics-winter-conference-2026.png" alt="KICS Winter Conference 2026" loading="lazy"><figcaption><h3>KICS Winter Conference 2026</h3><p class="memory-meta"><span>2026-02-04 ~ 06</span><span>Yongpyong</span></p></figcaption></figure>
             <figure class="gallery-card gallery-album-card">
               <div class="gallery-album-track" data-gallery-album>
                 <div class="gallery-album-slide is-active"><img src="assets/photos/gallery/NeurIPS-2025-07.jpg" alt="NeurIPS 2025" loading="lazy"></div>
@@ -451,10 +456,10 @@
               <button class="gallery-album-button gallery-album-button-prev" type="button" data-gallery-prev aria-label="Previous photo">‹</button>
               <button class="gallery-album-button gallery-album-button-next" type="button" data-gallery-next aria-label="Next photo">›</button>
               <div class="gallery-album-dots" aria-label="KICS Summer Conference 2025 photo selector"></div>
-              <figcaption><h3>KICS Summer Conference 2025</h3><p class="memory-meta"><span>2025-06-18 ~ 2025-06-21</span><span>제주</span></p></figcaption>
+              <figcaption><h3>KICS Summer Conference 2025</h3><p class="memory-meta"><span>2025-06-18 ~ 2025-06-21</span><span>Jeju</span></p></figcaption>
             </figure>
             <figure class="gallery-card"><img src="assets/photos/gallery/playing-futsal.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUAssR-GKfbbhW9U46uZRKfODE2oluomuPBJHhfOkbS7TYf2tQ0pGKj2sUOA7CvtSUriAR1nDn_um5c2kkvhokqgCSLSBmkGN2S9oya3EKH5_CS-X33UYNa3EbOK5lZpXSAvBbmWk9LmOi5XnRWm0W6qxSJZehftivDU4j86Qd_3-8gQUZFPedp3RaF1ybCwpxsqDA=w1280" alt="Playing soccer" loading="lazy"><figcaption><h3>Playing Soccer</h3><p class="memory-meta"><span>2025-05-01</span></p></figcaption></figure>
-            <figure class="gallery-card"><img src="assets/photos/gallery/mona-yong-pyong-ski-resort.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUAincCHhkQk6MIE07oUGuvHkWFMItUaA8pXGviPuHXZxjpoX96Z2-l83f4fgIR1yV0yqDejGDyaWFdRTK2pvqeD5kq_gh7Vwex3R1Ml25oKuMMfBikXwXN6dpy8U0ycNXInYQ4Ghs6KY2GHtJhd2SrUN357Rc6pOYe3MyCyNOQ65j3TC5SOAn_sDhz2JLHAeAaAd41oGFUjDSN69WxAMXwSqhrCya8r3-uTmtg6wv8=w1280" alt="KICS Winter Conference 2025" loading="lazy"><figcaption><h3>KICS Winter Conference 2025</h3><p class="memory-meta"><span>2025-02-05 ~ 07</span><span>용평</span></p></figcaption></figure>
+            <figure class="gallery-card"><img src="assets/photos/gallery/mona-yong-pyong-ski-resort.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUAincCHhkQk6MIE07oUGuvHkWFMItUaA8pXGviPuHXZxjpoX96Z2-l83f4fgIR1yV0yqDejGDyaWFdRTK2pvqeD5kq_gh7Vwex3R1Ml25oKuMMfBikXwXN6dpy8U0ycNXInYQ4Ghs6KY2GHtJhd2SrUN357Rc6pOYe3MyCyNOQ65j3TC5SOAn_sDhz2JLHAeAaAd41oGFUjDSN69WxAMXwSqhrCya8r3-uTmtg6wv8=w1280" alt="KICS Winter Conference 2025" loading="lazy"><figcaption><h3>KICS Winter Conference 2025</h3><p class="memory-meta"><span>2025-02-05 ~ 07</span><span>Yongpyong</span></p></figcaption></figure>
             <figure class="gallery-card"><img src="assets/photos/gallery/conference-dinner.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUBk7Q1JaNnC409B_2XaaHzlQeF6Gmxo0u8TIfFXQkOEbn2ZO-obcjwsFL6SDq1jmNbLxY8ry8SmOJ4BG_Kog1ETqO8Er4UZJSvjg50fPh6lVFtPclvsXy-BIkoOFPDKg9I7FXIOOKvpQ-sT6BmNl4sJLpq7tOr1Qr__WQ86lSLbzhKjilnsHI4eS-aUVfGYPHhwFb2SU0MRqw_soJuG25FDHNqC8vcKMP7m9sBsdc4=w1280" alt="Lab Lunch" loading="lazy"><figcaption><h3>Lab Lunch</h3><p class="memory-meta"><span>2025</span></p></figcaption></figure>
             <figure class="gallery-card gallery-album-card">
               <div class="gallery-album-track" data-gallery-album>
@@ -464,7 +469,7 @@
               <button class="gallery-album-button gallery-album-button-prev" type="button" data-gallery-prev aria-label="Previous photo">‹</button>
               <button class="gallery-album-button gallery-album-button-next" type="button" data-gallery-next aria-label="Next photo">›</button>
               <div class="gallery-album-dots" aria-label="KICS Fall Conference 2024 photo selector"></div>
-              <figcaption><h3>KICS Fall Conference 2024</h3><p class="memory-meta"><span>2024-11-20 ~ 22</span><span>경주</span></p></figcaption>
+              <figcaption><h3>KICS Fall Conference 2024</h3><p class="memory-meta"><span>2024-11-20 ~ 22</span><span>Gyeongju</span></p></figcaption>
             </figure>
             <figure class="gallery-card"><img src="assets/photos/gallery/playing-soccer.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUA0mEfWs1helkF7AyHH3KDpmwPq154iGG1mZ0juPpI89Cn-H9ef3y08uZalqniIHn56-142UxhY8AgoLjtJwLWrXODKqiRt2DerYKjiZD_I7_v2OXb5Uuro_bdwGM8ML-LNfoWA3bpQAWhmc0U4sUz_iFXbtcJ-1yKevqopWDnZZkVoEhOmZqHMeEFpzncrKBC525qaagn0uRMfxpixSUVJ7FdB1LiphC8LqXJK4Ik=w1280" alt="Playing soccer" loading="lazy"><figcaption><h3>Playing Soccer</h3><p class="memory-meta"><span>2024-11-21</span></p></figcaption></figure>
             <figure class="gallery-card"><img src="assets/photos/gallery/ictc-2024.jpg" data-original-src="https://lh3.googleusercontent.com/sitesv/AA5AbUD1FfEYsATWY4O5V3M30xxdMaB9DpHVi-vBwOIUaqHXTP_g0hlr3mMgDtzHTmyz-8Bgr8nRyF4B_oqQjHPNqEHj_A-2Z6WxoEso608DnPbrg-npgddFG1X4bk3IvYTgVuZ2zwA8a3kFdo4BhKpZO7Rz32x_-BHSIBjFVm3uyldWqy5IVkwE6o3mgcabDTv41m9OjKTNnp1vayAb--Mz7eX-E6VeVPCA6IE0O30kgEw=w1280" alt="ICTC 2024" loading="lazy"><figcaption><h3>ICTC 2024</h3><p class="memory-meta"><span>2024</span></p></figcaption></figure>
@@ -476,7 +481,7 @@
               <button class="gallery-album-button gallery-album-button-prev" type="button" data-gallery-prev aria-label="Previous photo">‹</button>
               <button class="gallery-album-button gallery-album-button-next" type="button" data-gallery-next aria-label="Next photo">›</button>
               <div class="gallery-album-dots" aria-label="KICS Summer Conference 2024 photo selector"></div>
-              <figcaption><h3>KICS Summer Conference 2024</h3><p class="memory-meta"><span>2024-06-19 ~ 2024-06-21</span><span>제주</span></p></figcaption>
+              <figcaption><h3>KICS Summer Conference 2024</h3><p class="memory-meta"><span>2024-06-19 ~ 2024-06-21</span><span>Jeju</span></p></figcaption>
             </figure>
           </div>
         </div>
@@ -492,15 +497,12 @@
                 We are seeking enthusiastic graduate students who are excited to join our research team. If you are
                 interested in contributing to our innovative projects, please feel free to reach out via email.
               </p>
-              <p>
-                저희 연구실에서는 열정을 가지고 함께 연구할 대학원생/학부 인턴을 모집하고 있습니다. 연구에 관심 있으신 분들은
-                이메일로 연락 주시기 바랍니다.
-              </p>
+              <p>Undergraduate research interns are also welcome. Please email us to discuss research opportunities.</p>
             </article>
             <div class="contact-panel contact-list">
               <p><strong>Email</strong><span><span>Hee-Youl Kwak: <a href="mailto:ghy1228@gmail.com">ghy1228@gmail.com</a></span><span>Dae-Young Yun: <a href="mailto:dyyun95@gmail.com">dyyun95@gmail.com</a></span></span></p>
               <p><strong>Tel</strong><span><span>Hee-Youl Kwak: <a href="tel:+820522591071">+82-52-259-1071</a></span><span>Dae-Young Yun: <a href="tel:+820522592188">+82-52-259-2188</a></span></span></p>
-              <p><strong>Address</strong><span><span>Building 7-527, 93, Daehak-ro, Nam-gu, Ulsan, Republic of Korea</span><span>울산광역시 남구 대학로 93 울산대학교 7호관 527호 (44610)</span></span></p>
+              <p><strong>Address</strong><span><span>Building 7-527, 93, Daehak-ro, Nam-gu, Ulsan 44610, Republic of Korea</span></span></p>
             </div>
           </div>
           <div class="contact-benefits">
@@ -540,6 +542,6 @@
       </div>
     </div>
 
-  <script src="script.js?v=23"></script>
+  <script src="script.js?v=24"></script>
   </body>
 </html>
